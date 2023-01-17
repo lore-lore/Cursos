@@ -1,8 +1,20 @@
+const { crearArchivo } = require('./helpers/multiplicar');
+const argv = require('./config/yargs');
+const colors = require('colors');
+
 console.clear();
-console.log('=============');
-console.log('Tabla del: 5');
-console.log('=============');
-const numero = 5;
-for (let i = 1; i <= 10; i++) {
-    console.log(`${numero} X ${i} = ${i * numero}`);
-}
+
+crearArchivo(argv.b, argv.l)
+    .then(nombreArchivo => console.log(nombreArchivo.rainbow, 'creado'))
+    .catch(err => console.log(err));
+
+/* definicion de donde vienen los argumentos*/
+/* const [, , arg3 = 'base=5'] = process.argv;
+const [, base = 5] = arg3.split('=');
+ */
+
+/*
+
+console.log('base: yargs', argv.b); */
+
+//const base = 5;
