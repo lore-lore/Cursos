@@ -5,7 +5,7 @@ class Tareas {
 
     get listadoArr(){
         const listado = [];
-        Object.keys(this._listado);
+        Object.keys(this._listado).forEach()
 
         return listado;
     }
